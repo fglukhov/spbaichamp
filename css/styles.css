@@ -826,7 +826,9 @@ ul.navbar-nav a:hover {
 
 footer {
   background: #202020;
-  padding: 50px 0 33px 0; }
+  padding: 50px 0 33px 0;
+  position: relative;
+  z-index: 10; }
 
 .footer-links {
   display: -ms-flexbox;
