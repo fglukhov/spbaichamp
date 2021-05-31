@@ -77,7 +77,7 @@ $(document).ready(function() {
 	//
 	// });
 
-	$("body").on("click", ".navbar-nav a", function() {
+	$("body").on("click", ".navbar-nav a, .header-button a", function() {
 
 		var curLink = $(this);
 
