@@ -21,33 +21,42 @@ $(window).on("scroll touchmove", function() {
 
 $(document).ready(function() {
 	
-	$("#formRegistrationTop").submit(function(e) {
-        e.preventDefault();var actionurl = e.currentTarget.action;
+	$("#formRegistrationTop, #formRegistrationDown").submit(function(form) {
+        form.preventDefault();
+		var actionurl = form.currentTarget.action;
+		var email = $(form.currentTarget).find('input[name=email]').val();
+		var request = {"body":{"email":email}};
         $.ajax({
-                url: actionurl,
-                type: 'post',
-                //dataType: 'application/json',
-                data: $("#formRegistrationTop").serialize(),
-                success: function(data) {
-					console.log("tst");
+			url: actionurl,
+			type: 'post',
+			dataType: 'json',
+			headers: {'Content-Type': 'application/json'},
+			contentType: 'application/json; charset=utf-8',
+			data: JSON.stringify(request),
+			success: function(response) {
+				if(response.STATUS == "OK") {
 					$('#successModal').modal('show');
-                }
+				} else {
+					if(response.STATUS == "ERR") {
+						errText = "";
+						for(var k in response.errors) {
+							errText = errText + response.errors[k]+"<br/>";
+						}
+						$('#errorModalText').html(errText);
+						$('#errorModal').modal('show');
+					} else {
+						$('#errorModalText').text("Неизвестная ошибка");
+						$('#errorModal').modal('show');
+					}
+				}
+			},
+			error: function(response) {
+				$('#errorModalText').text("Неизвестная ошибка");
+				$('#errorModal').modal('show');
+			}
         });
     });
 	
-	$("#formRegistrationDown").submit(function(e) {
-        e.preventDefault();var actionurl = e.currentTarget.action;
-        $.ajax({
-                url: actionurl,
-                type: 'post',
-                //dataType: 'application/json',
-                data: $("#formRegistrationDown").serialize(),
-                success: function(data) {
-					console.log("tst");
-					$('#successModal').modal('show'); 
-                }
-        });
-    });
 
 	$(".svg-inline").svgInline();
 

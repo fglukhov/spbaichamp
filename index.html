@@ -255,11 +255,26 @@
       </div>
       <!-- Старт END-->
     </main>
+	
+	
 	<div class="modal" id="successModal" tabindex="-1" role="dialog">
 	  <div class="modal-dialog" role="document">
 		<div class="modal-content">
 		  <div class="modal-body">
 			<h2 class="popup-text">Ваша заявка принята!</h2>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-1 btn-1-small" data-dismiss="modal">Закрыть</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	<div class="modal" id="errorModal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-body">
+			<h2 class="popup-text error-text" id="errorModalText">Ваша заявка принята!</h2>
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-1 btn-1-small" data-dismiss="modal">Закрыть</button>
@@ -282,6 +297,9 @@
 		text-align: center;
 		color: #fff;
 		margin: 0;
+	}
+	.error-text {
+		font-size: 24px;
 	}
 	</style>
 
