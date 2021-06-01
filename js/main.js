@@ -23,7 +23,7 @@ $(document).ready(function() {
 	
 	$("#formRegistrationTop, #formRegistrationDown").submit(function(form) {
         form.preventDefault();
-		var actionurl = form.currentTarget.action;
+		var actionurl = "https://spbaichamp.ru/api/subscribe/by-email/";
 		var email = $(form.currentTarget).find('input[name=email]').val();
 		var request = {"body":{"email":email}};
         $.ajax({
