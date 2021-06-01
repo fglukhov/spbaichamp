@@ -20,6 +20,34 @@ $(window).on("scroll touchmove", function() {
 });
 
 $(document).ready(function() {
+	
+	$("#formRegistrationTop").submit(function(e) {
+        e.preventDefault();var actionurl = e.currentTarget.action;
+        $.ajax({
+                url: actionurl,
+                type: 'post',
+                //dataType: 'application/json',
+                data: $("#formRegistrationTop").serialize(),
+                success: function(data) {
+					console.log("tst");
+					$('#successModal').modal('show');
+                }
+        });
+    });
+	
+	$("#formRegistrationDown").submit(function(e) {
+        e.preventDefault();var actionurl = e.currentTarget.action;
+        $.ajax({
+                url: actionurl,
+                type: 'post',
+                //dataType: 'application/json',
+                data: $("#formRegistrationDown").serialize(),
+                success: function(data) {
+					console.log("tst");
+					$('#successModal').modal('show'); 
+                }
+        });
+    });
 
 	$(".svg-inline").svgInline();
 

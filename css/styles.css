@@ -896,7 +896,7 @@ footer {
     display: block !important;
     opacity: 1 !important; } }
 
-@media (max-width: 1421px) {
+@media (max-width: 1459px) {
   .top-register-col-1,
   .top-register-col-3 {
     -ms-flex: 0 0 25%;

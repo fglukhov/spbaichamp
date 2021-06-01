@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru"></html>
+<html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -90,16 +90,16 @@
                 <div class="col top-register-col-2">
                   <div class="top-register-form">
                     <div class="top-register-form-inner">
-                      <form>
+                      <form id="formRegistrationTop" action="send.php">
                         <h3>Оповестить о&nbsp;старте регистрации</h3>
                         <div class="form-group">
-                          <input type="email" name="top_email" id="top_email" placeholder="Email" required>
+                          <input type="email" name="email" id="top_email" placeholder="Email" required>
                         </div>
                         <div class="form-footer">
                           <input class="btn btn-1" type="submit" value="Отправить">
                         </div>
                         <div class="form-agree">
-                          <p>Отправляя email, вы&nbsp;соглашаетесь на&nbsp;<a href="#">обработку персональных данных</a></p>
+                          <p>Отправляя email, Вы&nbsp;соглашаетесь с&nbsp;<a href="https://cups.mail.ru/ru/faq/legal/ua" target="_blank">Пользовательским соглашением</a></p>
                         </div>
                       </form>
                     </div>
@@ -130,7 +130,7 @@
                   <div class="col champ-block-col-2">
                     <div class="champ-block-descr">
                       <h3>Уровень знаний</h3>
-                      <p>Принять участие совсем не&nbsp;сложно, вам будет достаточно базовых навыков программирования</p>
+                      <p>Принять участие совсем не&nbsp;сложно, тебе будет достаточно базовых навыков программирования</p>
                     </div>
                   </div>
                 </div>
@@ -143,7 +143,7 @@
                   <div class="col champ-block-col-2">
                     <div class="champ-block-descr">
                       <h3>Местоположение</h3>
-                      <p>Неважно, где ты&nbsp;&mdash; локация не&nbsp;помешает тебе побороться за&nbsp;главный приз!</p>
+                      <p>Неважно, где ты находишься&nbsp;&mdash; участие в чемпионате доступно из любой точки России</p>
                     </div>
                   </div>
                 </div>
@@ -156,7 +156,7 @@
                   <div class="col champ-block-col-2">
                     <div class="champ-block-descr">
                       <h3>Практика на&nbsp;деле</h3>
-                      <p>Вы&nbsp;сможете самостоятельно написать свою игровую стратегию и&nbsp;увидеть как она работает</p>
+                      <p>Ты&nbsp;сможешь самостоятельно написать свою игровую стратегию и&nbsp;увидеть, как она работает</p>
                     </div>
                   </div>
                 </div>
@@ -214,11 +214,7 @@
                               <p>Партнер</p>
                             </div>
                             <div class="partner-tmb-pic"><img src="files/partner-7.png" width="161"></div></a></div>
-                        <div class="marquee-item"><a class="partner-tmb" href="#">
-                            <div class="partner-tmb-ttl">
-                              <p>Партнер</p>
-                            </div>
-                            <div class="partner-tmb-pic"><img src="files/partner-8.png" width="220"></div></a></div>
+                        
                       </div>
                     </div>
                   </div>
@@ -239,16 +235,16 @@
             <div class="start-wrapper">
               <div class="top-register-form start-form">
                 <div class="top-register-form-inner">
-                  <form>
+                  <form id="formRegistrationDown" action="send.php">
                     <h3>Оповестить о&nbsp;старте регистрации</h3>
                     <div class="form-group">
-                      <input type="email" name="start_email" id="start_email" placeholder="Email" required>
+                      <input type="email" name="email" id="start_email" placeholder="Email" required>
                     </div>
                     <div class="form-footer">
                       <input class="btn btn-1" type="submit" value="Отправить">
                     </div>
                     <div class="form-agree">
-                      <p>Отправляя email, вы&nbsp;соглашаетесь на&nbsp;<a href="#">обработку персональных данных</a></p>
+                      <p>Отправляя email, Вы&nbsp;соглашаетесь с&nbsp;<a href="https://cups.mail.ru/ru/faq/legal/ua" target="_blank">Пользовательским соглашением</a></p>
                     </div>
                   </form>
                 </div>
@@ -259,6 +255,37 @@
       </div>
       <!-- Старт END-->
     </main>
+	<div class="modal" id="successModal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-body">
+			<h2 class="popup-text">Ваша заявка принята!</h2>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-1 btn-1-small" data-dismiss="modal">Закрыть</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	<style>
+	.modal-content {
+		background-color: #1B1D22;
+		}
+	.modal-footer {
+		border-top:0px solid #e9ecef;
+	}
+	.popup-text {
+	    font-weight: 800;
+		font-size: 38px;
+		line-height: 56px;
+		text-align: center;
+		color: #fff;
+		margin: 0;
+	}
+	</style>
+
+
     <footer>
       <div class="footer-content">
         <div class="container">
@@ -266,12 +293,12 @@
             <div class="footer-links-item"><a class="footer-link" href="mailto:info@spbaichamp.ru">
                 <div class="footer-link-pic"><img class="svg-inline" src="images/footer-email.svg"></div>
                 <div class="footer-link-text">info@spbaichamp.ru</div></a></div>
-            <div class="footer-links-item"><a class="footer-link" href="https://t.me/spb_ai_champ">
+           <!-- <div class="footer-links-item"><a class="footer-link" href="https://t.me/spb_ai_champ">
                 <div class="footer-link-pic"><img class="svg-inline" src="images/footer-telegram.svg"></div>
-                <div class="footer-link-text">@spb_ai_champ</div></a></div>
-            <div class="footer-links-item"><a class="footer-link" href="tel:8 (800) 555 35 35">
+                <div class="footer-link-text">@spb_ai_champ</div></a></div> -->
+           <!-- <div class="footer-links-item"><a class="footer-link" href="tel:8 (800) 555 35 35">
                 <div class="footer-link-pic"><img class="svg-inline" src="images/footer-phone.svg"></div>
-                <div class="footer-link-text">8 (800) 555 35 35</div></a></div>
+                <div class="footer-link-text">8 (800) 555 35 35</div></a></div> -->
           </div>
         </div>
       </div>
@@ -289,3 +316,4 @@
     <!--script(src='js/animations.js')-->
   </div>
 </body>
+</html>
