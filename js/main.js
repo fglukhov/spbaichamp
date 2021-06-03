@@ -60,16 +60,16 @@ $(document).ready(function() {
 						//$('#errorModal').modal('show');
 					}
 
-					$(form.currentTarget).hide();
-					$(form.currentTarget).closest(".top-register-form-inner").find(".form-error").fadeIn(250);
+					//$(form.currentTarget).hide();
+					//$(form.currentTarget).closest(".top-register-form-inner").find(".form-error").fadeIn(250);
 
 				}
 			},
 			error: function(response) {
 				$('.error-modal-text').text("Неизвестная ошибка");
 				//$('#errorModal').modal('show');
-				$(form.currentTarget).hide();
-				$(form.currentTarget).closest(".top-register-form-inner").find(".form-error").fadeIn(250);
+				//$(form.currentTarget).hide();
+				//$(form.currentTarget).closest(".top-register-form-inner").find(".form-error").fadeIn(250);
 			}
 		});
 	});
