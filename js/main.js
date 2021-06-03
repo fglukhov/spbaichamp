@@ -20,43 +20,60 @@ $(window).on("scroll touchmove", function() {
 });
 
 $(document).ready(function() {
-	
+
+	$(".btn-message-close").click(function () {
+
+		$(this).closest(".form-message").hide();
+		$(this).closest(".top-register-form-inner").find("form").fadeIn(250);
+
+
+	});
+
 	$("#formRegistrationTop, #formRegistrationDown").submit(function(form) {
-        form.preventDefault();
+		form.preventDefault();
 		var actionurl = "https://spbaichamp.ru/api/subscribe/by-email/";
 		var email = $(form.currentTarget).find('input[name=email]').val();
-		var request = {"body":{"email":email}};
-        $.ajax({
+		var request = {"email":email};
+		$.ajax({
 			url: actionurl,
 			type: 'post',
-			dataType: 'json',
-			headers: {'Content-Type': 'application/json'},
-			contentType: 'application/json; charset=utf-8',
-			data: JSON.stringify(request),
+			//dataType: 'json',
+			//headers: {'Content-Type': 'application/json'},
+			//contentType: 'application/json; charset=utf-8',
+			data: request,
 			success: function(response) {
-				if(response.STATUS == "OK") {
-					$('#successModal').modal('show');
+				if(response.status == "OK") {
+					//$('#successModal').modal('show');
+					$(form.currentTarget).hide();
+					$(form.currentTarget).closest(".top-register-form-inner").find(".form-success").fadeIn(250);
+					$(".form-email").html(email);
 				} else {
-					if(response.STATUS == "ERR") {
+					if(response.status == "ERR") {
 						errText = "";
 						for(var k in response.errors) {
 							errText = errText + response.errors[k]+"<br/>";
 						}
-						$('#errorModalText').html(errText);
-						$('#errorModal').modal('show');
+						$('.error-modal-text').html(errText);
+						//$('#errorModal').modal('show');
 					} else {
-						$('#errorModalText').text("Неизвестная ошибка");
-						$('#errorModal').modal('show');
+						$('.error-modal-text').text("Неизвестная ошибка");
+						//$('#errorModal').modal('show');
 					}
+
+					$(form.currentTarget).hide();
+					$(form.currentTarget).closest(".top-register-form-inner").find(".form-error").fadeIn(250);
+
 				}
 			},
 			error: function(response) {
-				$('#errorModalText').text("Неизвестная ошибка");
-				$('#errorModal').modal('show');
+				$('.error-modal-text').text("Неизвестная ошибка");
+				//$('#errorModal').modal('show');
+				$(form.currentTarget).hide();
+				$(form.currentTarget).closest(".top-register-form-inner").find(".form-error").fadeIn(250);
 			}
-        });
-    });
-	
+		});
+	});
+
 
 	$(".svg-inline").svgInline();
 
@@ -339,11 +356,24 @@ function validateForms() {
 			});
 		}
 	});
+
+	$.validator.addMethod(
+		"regex",
+		function(value, element, regexp) {
+			var re = new RegExp(regexp);
+			return this.optional(element) || re.test(value);
+		},
+		"Неправильный Email"
+	);
+
+	$("input[type='email']").rules("add", { regex: /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/ });
+
 }
+
 jQuery.extend(jQuery.validator.messages, {
 	required: "Не заполнено поле",
 	remote: "Please fix this field.",
-	email: "Введите правильный e-mail.",
+	email: "Неправильный Email",
 	url: "Please enter a valid URL.",
 	date: "Please enter a valid date.",
 	dateISO: "Please enter a valid date (ISO).",

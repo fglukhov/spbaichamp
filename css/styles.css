@@ -1076,6 +1076,42 @@ footer {
 	margin: 196px 0 0 0;
 }
 
+.form-message {
+	display: none;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.form-message h4,
+.form-message .h4 {
+	font-weight: 800;
+	font-size: 24px;
+	line-height: 32px;
+	text-align: center;
+	color: #1F1F1F;
+	margin: 0 0 17px 0;
+
+}
+
+.form-message-button {
+	margin: 23px 0 0 0;
+}
+
+.form-message-button .btn {
+	width: 100%;
+}
+
+.form-footer-error {
+	font-weight: 800;
+	font-size: 13px;
+	line-height: 16px;
+	text-align: center;
+	color: #FF3E29;
+	margin: 9px 0 0 0;
+}
+
 #md-indicator {
 	display: none;
 }
@@ -1083,6 +1119,7 @@ footer {
 #mobile-indicator {
 	display: none;
 }
+
 
 @media (min-width: 768px) {
 	.navbar-wrapper {
@@ -1379,6 +1416,14 @@ footer {
 	.footer-links-item:last-child {
 		margin: 0;
 	}
+
+	.form-message h4,
+	.form-message .h4 {
+		font-size: 20px;
+		line-height: 28px;
+	}
+
 }
 
 /*# sourceMappingURL=styles.css.map */
+

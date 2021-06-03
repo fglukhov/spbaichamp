@@ -29,6 +29,7 @@
   gtag('js', new Date());
   gtag('config', 'G-EQT3XGCN5B');
   </script>
+	<script src="../../pijama/build/js/main.js"></script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -102,6 +103,19 @@
                           <p>Отправляя email, Вы&nbsp;соглашаетесь с&nbsp;<a href="https://cups.mail.ru/ru/faq/legal/ua" target="_blank">Пользовательским соглашением</a></p>
                         </div>
                       </form>
+											<div class="form-message form-success">
+												<h4>Готово!</h4>
+												<p>Как только регистрация откроется, мы оповестим вас по почте <span class="form-email">konstantinopolsky@mail.ru</span></p>
+												<div class="form-message-button">
+													<div class="btn btn-1 btn-message-close">Буду ждать!</div>
+												</div>
+											</div>
+											<div class="form-message form-error">
+												<h4 id="error-modal-text">Неизвестная ошибка</h4>
+												<div class="form-message-button">
+													<div class="btn btn-1 btn-message-close">Понятно</div>
+												</div>
+											</div>
                     </div>
                   </div>
                 </div>
@@ -214,6 +228,16 @@
                               <p>Партнер</p>
                             </div>
                             <div class="partner-tmb-pic"><img src="files/partner-7.png" width="161"></div></a></div>
+                        <div class="marquee-item"><a class="partner-tmb" href="#">
+                            <div class="partner-tmb-ttl">
+                              <p>Партнер</p>
+                            </div>
+                            <div class="partner-tmb-pic"><img src="files/partner-9.png" width="300"></div></a></div>
+                        <div class="marquee-item"><a class="partner-tmb" href="#">
+                            <div class="partner-tmb-ttl">
+                              <p>Партнер</p>
+                            </div>
+                            <div class="partner-tmb-pic"><img src="files/partner-10.png" width="300"></div></a></div>
 
                       </div>
                     </div>
@@ -243,10 +267,26 @@
                     <div class="form-footer">
                       <input class="btn btn-1" type="submit" value="Отправить">
                     </div>
+										<div class="form-footer-error">
+											Превышено количество отправок, попробуйте позже
+										</div>
                     <div class="form-agree">
                       <p>Отправляя email, Вы&nbsp;соглашаетесь с&nbsp;<a href="https://cups.mail.ru/ru/faq/legal/ua" target="_blank">Пользовательским соглашением</a></p>
                     </div>
                   </form>
+									<div class="form-message form-success">
+										<h4>Готово!</h4>
+										<p>Как только регистрация откроется, мы оповестим вас по почте <span class="form-email">konstantinopolsky@mail.ru</span></p>
+										<div class="form-message-button">
+											<div class="btn btn-1 btn-message-close">Буду ждать!</div>
+										</div>
+									</div>
+									<div class="form-message form-error">
+										<h4 class="error-text">Неизвестная ошибка</h4>
+										<div class="form-message-button">
+											<div class="btn btn-1 btn-message-close">Понятно</div>
+										</div>
+									</div>
                 </div>
               </div>
             </div>
@@ -270,18 +310,7 @@
 	  </div>
 	</div>
 	
-	<div class="modal" id="errorModal" tabindex="-1" role="dialog">
-	  <div class="modal-dialog" role="document">
-		<div class="modal-content">
-		  <div class="modal-body">
-			<h2 class="popup-text error-text" id="errorModalText">Ваша заявка принята!</h2>
-		  </div>
-		  <div class="modal-footer">
-			<button type="button" class="btn btn-1 btn-1-small" data-dismiss="modal">Закрыть</button>
-		  </div>
-		</div>
-	  </div>
-	</div>
+
 	
 	<style>
 	.modal-content {
@@ -330,9 +359,9 @@
     <script src="js/scrollmagic/ScrollMagic.min.js"></script>
     <script src="js/scrollmagic/plugins/animation.gsap.min.js"></script>
     <script src="js/jquery.mousewheel.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/additional-methods.min.js"></script>
+    <script src="js/main.js"></script>
     <!--script(src='js/animations.js')-->
   </div>
 </body>
