@@ -340,14 +340,14 @@ function validateForms() {
 				}
 			},
 			submitHandler: function(form) {
-				$.ajax({
-					type: "POST",
-					data: $(form).serialize(),
-					success: function () {
-						formSuccess(form);
-					}
-				});
-				return false;
+				// $.ajax({
+				// 	type: "POST",
+				// 	data: $(form).serialize(),
+				// 	success: function () {
+				// 		formSuccess(form);
+				// 	}
+				// });
+				// return false;
 			}
 		});
 		if ($(this).find("input.password").length && $(this).find("input.password-repeat").length) {
